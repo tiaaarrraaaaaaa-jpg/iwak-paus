@@ -3,391 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog & Edukasi Ikan Paus </title>
+    <title>Toko Serba Ada - Paus, Jemblem & Hijab</title>
     <style>
         * {
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f0f4f8;
+            background-color: #f4f6f9;
             color: #333;
+            line-height: 1.6;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #005c97, #363795);
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
             padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
         header p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
 
-        /* Container Utama */
+        /* Container Produk */
         .container {
             max-width: 1100px;
-            margin: 30px auto;
+            margin: 40px auto;
             padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #005c97;
-        }
-
-        /* Grid Produk */
-        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        /* Card Produk */
+        /* Kartu Produk */
         .card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
             transform: translateY(-5px);
         }
 
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .card-header {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
+        /* Warna khusus tiap kategori */
+        .bg-paus { background: #0288d1; }
+        .bg-jemblem { background: #d84315; }
+        .bg-hijab { background: #ad1457; }
+
         .card-body {
-            padding: 20px;
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
-            color: #2c3e50;
+            color: #222;
         }
 
-        .card-desc {
-            font-size: 0.9rem;
+        .card-text {
             color: #666;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
         }
 
         .price {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: #e74c3c;
+            color: #2e7d32;
             margin-bottom: 15px;
         }
 
+        /* Tombol Beli */
         .btn-buy {
             display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: #25d366;
-            color: white;
             text-align: center;
+            background-color: #25D366;
+            color: white;
             text-decoration: none;
-            border-radius: 6px;
+            padding: 12px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 1rem;
-            transition: background 0.2s;
+            transition: background 0.3s ease;
         }
 
         .btn-buy:hover {
             background-color: #1eb954;
         }
 
-        /* Section Kontak */
-        .contact-section {
-            background: white;
-            margin-top: 50px;
-            padding: 30px;
-            border-radius: 12px;
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
         }
 
         .contact-number {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            color: #005c97;
-            margin: 15px 0;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 12px 25px;
-            background-color: #25d366;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        .contact-btn:hover {
-            background-color: #1eb954;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: white;
-            margin-top: 40px;
+            color: #25D366;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Website -->
     <header>
-        <h1>Oceanic Whale Store</h1>
-        <p>Katalog & Informasi Spesies Ikan Paus </p>
+        <h1>Layanan & Produk Pilihan</h1>
+        <p>Solusi Terpadu: Wisata Ikan Paus, Kuliner Jemblem, dan Fashion Hijab Premium</p>
     </header>
 
+    <!-- Konten Produk -->
     <div class="container">
-        <h2 class="section-title">Katalog Spesies Ikan Paus</h2>
 
-        <div class="product-grid">
-            
-            <!-- Produk 1 -->
-            <div class="card">
-                <img src="bdeae908ea3bb24542e953741c8c40cd.jpg" alt="Paus Biru">
-                <div class="card-body">
-                    <h3 class="card-title">Paus Biru (Blue Whale)</h3>
-                    <p class="card-desc">Mamalia terbesar di bumi. Memiliki panjang hingga 30 meter dan berat mencapai 180 ton.</p>
-                    <div class="price">Rp 500.000.000 </div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20tertarik%20membeli/memesan%20Paus%20Biru" target="_blank" class="btn-buy">Pesan via WhatsApp</a>
+        <!-- Produk 1: Ikan Paus -->
+        <div class="card">
+            <div class="card-header bg-paus">
+                🐋 Wisata / Edukasi
+            </div>
+            <div class="card-body">
+                <div>
+                    <h2 class="card-title">Tur Edukasi & Melihat Ikan Paus</h2>
+                    <p class="card-text">Pengalaman spektakuler melihat ikan paus secara langsung di habitat aslinya bersama panduan ahli maritim profesional.</p>
+                </div>
+                <div>
+                    <div class="price">Rp 750.000 / orang</div>
+                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20tertarik%20pesan%20Paket%20Wisata%20Ikan%20Paus" class="btn-buy" target="_blank">Pesan via WhatsApp</a>
                 </div>
             </div>
-
-            <!-- Produk 2 -->
-            <div class="card">
-                <img src="dc876974443a2ae10ac724092a4f8f88.jpg" alt="Paus Bungkuk">
-                <div class="card-body">
-                    <h3 class="card-title">Paus Bungkuk (Humpback)</h3>
-                    <p class="card-desc">Dikenal dengan lompatan atraktifnya di atas air dan suara nyanyian bawah laut yang unik.</p>
-                    <div class="price">Rp 350.000.000 </div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20tertarik%20membeli/memesan%20Paus%20Bungkuk" target="_blank" class="btn-buy">Pesan via WhatsApp</a>
-                </div>
-            </div>
-
-            <!-- Produk 3 -->
-            <div class="card">
-                <img src="f76903d43ffd91e9b98d41b17c1f792f.jpg" alt="Paus Orca">
-                <div class="card-body">
-                    <h3 class="card-title">Paus Orca (Killer Whale)</h3>
-                    <p class="card-desc">Spesies paus pembunuh dengan corak hitam putih khas. Sangat cerdas dan hidup berkelompok.</p>
-                    <div class="price">Rp 400.000.000 </div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20tertarik%20membeli/memesan%20Paus%20Orca" target="_blank" class="btn-buy">Pesan via WhatsApp</a>
-                </div>
-            </div>
-
         </div>
 
-        <!-- Section Kontak -->
-        <div class="contact-section">
-            <h2>Layanan Pelanggan & Pemesanan</h2>
-            <p>Untuk pemesanan atau pertanyaan lebih lanjut, hubungi kami di:</p>
-            <div class="contact-number">📞 0815-1507-2699</div>
-            <a href="https://wa.me/6281515072699?text=Halo,%20saya%20ingin%20bertanya%20seputar%20layanan%20Anda" target="_blank" class="contact-btn">Chat WhatsApp Sekarang</a>
+        <!-- Produk 2: Jemblem -->
+        <div class="card">
+            <div class="card-header bg-jemblem">
+                🍩 Kuliner Tradisional
+            </div>
+            <div class="card-body">
+                <div>
+                    <h2 class="card-title">Jemblem Singkong Gula Merah</h2>
+                    <p class="card-text">Kue tradisional berbahan olahan singkong pilihan dengan isian gula merah murni yang meleleh di mulut. Hangat, gurih, dan manis.</p>
+                </div>
+                <div>
+                    <div class="price">Rp 15.000 / porsi (isi 5)</div>
+                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20ingin%20pesan%20Jemblem%20Gula%20Merah" class="btn-buy" target="_blank">Pesan via WhatsApp</a>
+                </div>
+            </div>
         </div>
+
+        <!-- Produk 3: Hijab -->
+        <div class="card">
+            <div class="card-header bg-hijab">
+                🧕 Fashion Muslimah
+            </div>
+            <div class="card-body">
+                <div>
+                    <h2 class="card-title">Hijab Segiempat Premium</h2>
+                    <p class="card-text">Hijab berbahan adem, tidak menerawang, mudah dibentuk, dan tersedia dalam berbagai varian warna anggun untuk penampilan harian Anda.</p>
+                </div>
+                <div>
+                    <div class="price">Rp 45.000 / pcs</div>
+                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20ingin%20tanya%20stok%20Hijab%20Segiempat" class="btn-buy" target="_blank">Pesan via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <!-- Footer / Kontak -->
     <footer>
-        <p>&copy; 2026 - iwak paus segar Novi Dwi M</p>
+        <p>Hubungi Kami Lebih Lanjut:</p>
+        <p class="contact-number">📞 WhatsApp / Telepon: 0815-1507-2699</p>
+        <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Toko Serba Ada. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jemblem Lumer & Renyah - Aneka Rasa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { background-color: #fcf9f2; color: #333; line-height: 1.6; }
-        
-        /* Gambar Header Utama menggunakan Foto Kamu */
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
-                        url('input_file_0.png') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-        }
-        
-        header h1 { font-size: 2.8rem; color: #ffb703; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
-        header p { font-size: 1.2rem; margin-bottom: 25px; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
-        
-        .btn-main {
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            padding: 14px 32px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            border-radius: 50px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transition: 0.3s;
-        }
-        .btn-main:hover { background-color: #1eb854; transform: translateY(-2px); }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
-        .section-title { text-align: center; font-size: 2rem; margin-bottom: 35px; color: #d4a373; }
-
-        .features {
-            background-color: #faedcd;
-            padding: 35px 20px;
-            border-radius: 15px;
-            margin-bottom: 45px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-        .feature-item h3 { color: #bc8a5f; margin-bottom: 6px; }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
-        .menu-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .menu-img { width: 100%; height: 210px; object-fit: cover; }
-        .menu-info { padding: 20px; text-align: center; }
-        .menu-title { font-size: 1.25rem; margin-bottom: 8px; }
-        .menu-desc { font-size: 0.88rem; color: #666; margin-bottom: 15px; }
-        .menu-price { font-size: 1.2rem; font-weight: 700; color: #e63946; margin-bottom: 15px; }
-        
-        .btn-order {
-            display: block;
-            padding: 10px 0;
-            background-color: #d4a373;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-        .btn-order:hover { background-color: #bc8a5f; }
-
-        footer { background-color: #333; color: white; text-align: center; padding: 35px 20px; margin-top: 50px; }
-        footer a { color: #ffb703; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Jemblem Lumer Istimewa</h1>
-        <p>Jajanan Tradisional Singkong Renyah dengan Isian Lumer Berbagai Rasa!</p>
-        <a href="https://wa.me/6281515072699?text=Halo,%20saya%20ingin%20pesan%20Jemblem" class="btn-main" target="_blank">Pesan via WhatsApp</a>
-    </header>
-
-    <div class="container">
-        <div class="features">
-            <div class="feature-item">
-                <h3>Fresh & Warm</h3>
-                <p>Digoreng mendadak saat dipesan, selalu hangat.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Bahan Pilihan</h3>
-                <p>Singkong berkualitas premium, empuk & renyah.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Isian Melimpah</h3>
-                <p>Lumer manisnya pas di setiap gigitan.</p>
-            </div>
-        </div>
-
-        <h2 class="section-title">Pilihan Rasa & Harga</h2>
-        
-        <div class="menu-grid">
-            <!-- Varian 1 -->
-            <div class="menu-card">
-                <img src="input_file_0.png" alt="Jemblem Gula Merah" class="menu-img">
-                <div class="menu-info">
-                    <h3 class="menu-title">Original Gula Merah</h3>
-                    <p class="menu-desc">Isian gula merah meleleh sempurna saat digigit.</p>
-                    <div class="menu-price">Rp 12.000 <small style="font-size:0.75rem; color:#777;">/ isi 5 pcs</small></div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20mau%20pesan%20Jemblem%20Gula%20Merah" class="btn-order" target="_blank">Pesan Rasa Ini</a>
-                </div>
-            </div>
-
-            <!-- Varian 2 -->
-            <div class="menu-card">
-                <img src="input_file_0.png" alt="Jemblem Cokelat" class="menu-img">
-                <div class="menu-info">
-                    <h3 class="menu-title">Cokelat Lumer</h3>
-                    <p class="menu-desc">Isian cokelat manis premium yang melted di mulut.</p>
-                    <div class="menu-price">Rp 15.000 <small style="font-size:0.75rem; color:#777;">/ isi 5 pcs</small></div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20mau%20pesan%20Jemblem%20Cokelat" class="btn-order" target="_blank">Pesan Rasa Ini</a>
-                </div>
-            </div>
-
-            <!-- Varian 3 -->
-            <div class="menu-card">
-                <img src="input_file_0.png" alt="Jemblem Keju" class="menu-img">
-                <div class="menu-info">
-                    <h3 class="menu-title">Keju Melt</h3>
-                    <p class="menu-desc">Perpaduan gurihnya keju yang mulur dipadu tekstur renyah.</p>
-                    <div class="menu-price">Rp 15.000 <small style="font-size:0.75rem; color:#777;">/ isi 5 pcs</small></div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20mau%20pesan%20Jemblem%20Keju" class="btn-order" target="_blank">Pesan Rasa Ini</a>
-                </div>
-            </div>
-
-            <!-- Varian 4 -->
-            <div class="menu-card">
-                <img src="input_file_0.png" alt="Jemblem Matcha" class="menu-img">
-                <div class="menu-info">
-                    <h3 class="menu-title">Matcha / Green Tea</h3>
-                    <p class="menu-desc">Sensasi isian cream matcha manis dan khas.</p>
-                    <div class="menu-price">Rp 15.000 <small style="font-size:0.75rem; color:#777;">/ isi 5 pcs</small></div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20mau%20pesan%20Jemblem%20Matcha" class="btn-order" target="_blank">Pesan Rasa Ini</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>Hubungi Pemesanan:</p>
-        <p><strong>WhatsApp:</strong> <br> <a href="https://wa.me/6281515072699" target="_blank">0815-1507-2699</a></p>
-    </footer>
-
-</body>
-</html>
 
