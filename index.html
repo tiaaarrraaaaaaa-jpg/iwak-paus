@@ -11,207 +11,281 @@
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            background-color: #f4f6f9;
+            background-color: #f4f7f6;
             color: #333;
-            line-height: 1.6;
+            padding-bottom: 50px;
         }
-
-        /* Header */
         header {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
-            padding: 40px 20px;
             text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
         header h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
-
         header p {
             font-size: 1.1rem;
             opacity: 0.9;
         }
-
-        /* Container Produk */
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
-
-        /* Kartu Produk */
+        .section-title {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #2a5298;
+            color: #1e3c72;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
         .card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
-
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
-
-        .card-header {
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
         }
-
-        /* Warna khusus tiap kategori */
-        .bg-paus { background: #0288d1; }
-        .bg-jemblem { background: #d84315; }
-        .bg-hijab { background: #ad1457; }
-
         .card-body {
-            padding: 25px;
+            padding: 1.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-
         .card-title {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #222;
-        }
-
-        .card-text {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .price {
             font-size: 1.3rem;
-            font-weight: bold;
-            color: #2e7d32;
-            margin-bottom: 15px;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
         }
-
-        /* Tombol Beli */
-        .btn-buy {
+        .card-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        .card-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        .btn-checkout {
             display: block;
-            text-align: center;
+            width: 100%;
             background-color: #25D366;
             color: white;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
+            text-align: center;
+            padding: 12px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
             font-weight: bold;
-            transition: background 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
         }
-
-        .btn-buy:hover {
+        .btn-checkout:hover {
             background-color: #1eb954;
         }
-
-        /* Footer */
         footer {
-            background: #222;
-            color: white;
             text-align: center;
-            padding: 25px 20px;
-            margin-top: 50px;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        .contact-number {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #25D366;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            color: #666;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Website -->
     <header>
-        <h1>Layanan & Produk Pilihan</h1>
-        <p>Solusi Terpadu: Wisata Ikan Paus, Kuliner Jemblem, dan Fashion Hijab Premium</p>
+        <h1>Toko Serba Ada</h1>
+        <p>Penyedia Jenis Ikan Paus, Jemblem Hangat, dan Hijab Elegan</p>
     </header>
 
-    <!-- Konten Produk -->
     <div class="container">
 
-        <!-- Produk 1: Ikan Paus -->
-        <div class="card">
-            <div class="card-header bg-paus">
-                🐋 Wisata / Edukasi
-            </div>
-            <div class="card-body">
-                <div>
-                    <h2 class="card-title">Tur Edukasi & Melihat Ikan Paus</h2>
-                    <p class="card-text">Pengalaman spektakuler melihat ikan paus secara langsung di habitat aslinya bersama panduan ahli maritim profesional.</p>
+        <!-- KATEGORI IKAN PAUS (JENIS-JENIS PAUS) -->
+        <h2 class="section-title">🐋 Spesies Ikan Paus</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1568430460464-5261cd559404?auto=format&fit=crop&w=500&q=80" alt="Paus Biru" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Paus Biru (Blue Whale)</h3>
+                        <p class="card-desc">Mamalia terbesar di bumi. Tersedia variasi bibit / anak paus.</p>
+                        <div class="card-price">Rp 150.000.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Paus Biru (Blue Whale)', 'Rp 150.000.000')">Checkout via WA</button>
                 </div>
-                <div>
-                    <div class="price">Rp 750.000 / orang</div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20tertarik%20pesan%20Paket%20Wisata%20Ikan%20Paus" class="btn-buy" target="_blank">Pesan via WhatsApp</a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500&q=80" alt="Paus Orca" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Paus Orca (Killer Whale)</h3>
+                        <p class="card-desc">Paus pembunuh bertekstur warna hitam putih yang cerdas.</p>
+                        <div class="card-price">Rp 95.000.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Paus Orca (Killer Whale)', 'Rp 95.000.000')">Checkout via WA</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=500&q=80" alt="Paus Bungkuk" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Paus Bungkuk (Humpback Whale)</h3>
+                        <p class="card-desc">Paus unik yang terkenal dengan suara nyanyian bawah lautnya.</p>
+                        <div class="card-price">Rp 110.000.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Paus Bungkuk (Humpback)', 'Rp 110.000.000')">Checkout via WA</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1568430460464-5261cd559404?auto=format&fit=crop&w=500&q=80" alt="Paus Sperma" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Paus Sperma (Sperm Whale)</h3>
+                        <p class="card-desc">Paus berukuran besar dengan kepala khas penghasil ambergis.</p>
+                        <div class="card-price">Rp 130.000.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Paus Sperma (Sperm Whale)', 'Rp 130.000.000')">Checkout via WA</button>
                 </div>
             </div>
         </div>
 
-        <!-- Produk 2: Jemblem -->
-        <div class="card">
-            <div class="card-header bg-jemblem">
-                🍩 Kuliner Tradisional
-            </div>
-            <div class="card-body">
-                <div>
-                    <h2 class="card-title">Jemblem Singkong Gula Merah</h2>
-                    <p class="card-text">Kue tradisional berbahan olahan singkong pilihan dengan isian gula merah murni yang meleleh di mulut. Hangat, gurih, dan manis.</p>
+        <!-- KATEGORI JEMBLEM -->
+        <h2 class="section-title">🍠 Jemblem Tradisional (Jajanan Singkong)</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80" alt="Jemblem Gula Merah" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Jemblem Original Gula Merah (Isi 10)</h3>
+                        <p class="card-desc">Olahan singkong gurih dengan lumeran gula jawa murni.</p>
+                        <div class="card-price">Rp 15.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Jemblem Original Gula Merah (10pcs)', 'Rp 15.000')">Checkout via WA</button>
                 </div>
-                <div>
-                    <div class="price">Rp 15.000 / porsi (isi 5)</div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20ingin%20pesan%20Jemblem%20Gula%20Merah" class="btn-buy" target="_blank">Pesan via WhatsApp</a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" alt="Jemblem Cokelat Keju" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Jemblem Lumer Cokelat Keju (Isi 10)</h3>
+                        <p class="card-desc">Varian modern dengan isian cokelat melimpah dan keju.</p>
+                        <div class="card-price">Rp 20.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Jemblem Cokelat Keju (10pcs)', 'Rp 20.000')">Checkout via WA</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" alt="Jemblem Frozen" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Jemblem Frozen Ready to Fry (Isi 20)</h3>
+                        <p class="card-desc">Praktis, tinggal goreng sendiri di rumah kapan saja.</p>
+                        <div class="card-price">Rp 30.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Jemblem Frozen (20pcs)', 'Rp 30.000')">Checkout via WA</button>
                 </div>
             </div>
         </div>
 
-        <!-- Produk 3: Hijab -->
-        <div class="card">
-            <div class="card-header bg-hijab">
-                🧕 Fashion Muslimah
-            </div>
-            <div class="card-body">
-                <div>
-                    <h2 class="card-title">Hijab Segiempat Premium</h2>
-                    <p class="card-text">Hijab berbahan adem, tidak menerawang, mudah dibentuk, dan tersedia dalam berbagai varian warna anggun untuk penampilan harian Anda.</p>
+        <!-- KATEGORI HIJAB -->
+        <h2 class="section-title">🧕 Koleksi Hijab Fashion</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="Hijab Bella Square" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Hijab Bella Square Premium</h3>
+                        <p class="card-desc">Bahan Double Hycount lembut, mudah dibentuk, tidak menerawang.</p>
+                        <div class="card-price">Rp 25.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Hijab Bella Square Premium', 'Rp 25.000')">Checkout via WA</button>
                 </div>
-                <div>
-                    <div class="price">Rp 45.000 / pcs</div>
-                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20ingin%20tanya%20stok%20Hijab%20Segiempat" class="btn-buy" target="_blank">Pesan via WhatsApp</a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="Hijab Pashmina Silk" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Hijab Pashmina Silk Cradenza</h3>
+                        <p class="card-desc">Kesan mewah dan berkilau, cocok untuk acara formal & pesta.</p>
+                        <div class="card-price">Rp 45.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Hijab Pashmina Silk Cradenza', 'Rp 45.000')">Checkout via WA</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=500&q=80" alt="Hijab Bergo Instant" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Hijab Bergo Maryam Instant</h3>
+                        <p class="card-desc">Bahan Jersey Super, adem dan praktis untuk pemakaian sehari-hari.</p>
+                        <div class="card-price">Rp 35.000</div>
+                    </div>
+                    <button class="btn-checkout" onclick="checkout('Hijab Bergo Maryam Instant', 'Rp 35.000')">Checkout via WA</button>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Footer / Kontak -->
     <footer>
-        <p>Hubungi Kami Lebih Lanjut:</p>
-        <p class="contact-number">📞 WhatsApp / Telepon: 0815-1507-2699</p>
-        <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Toko Serba Ada. All Rights Reserved.</p>
+        <p>&copy; 2026 Toko Serba Ada. Kontak WA: <strong>0815-1507-2699</strong></p>
     </footer>
+
+    <script>
+        function checkout(namaProduk, hargaProduk) {
+            // Nomor WhatsApp Tujuan
+            const nomorWA = "6281515072699"; 
+            
+            // Format Pesan Otomatis
+            const pesan = `Halo, saya ingin membeli produk berikut:\n\n` +
+                          `📌 *Nama Produk:* ${namaProduk}\n` +
+                          `💰 *Harga:* ${hargaProduk}\n\n` +
+                          `Mohon diproses pesanannya. Terima kasih!`;
+            
+            // Encode pesan untuk URL WhatsApp
+            const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+            
+            // Buka WhatsApp di tab baru
+            window.open(url, '_blank');
+        }
+    </script>
 
 </body>
 </html>
-
-
