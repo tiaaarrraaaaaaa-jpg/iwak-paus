@@ -222,4 +222,172 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jemblem Lumer & Renyah - Aneka Rasa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { background-color: #fcf9f2; color: #333; line-height: 1.6; }
+        
+        /* Gambar Header Utama menggunakan Foto Kamu */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                        url('input_file_0.png') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+        
+        header h1 { font-size: 2.8rem; color: #ffb703; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+        header p { font-size: 1.2rem; margin-bottom: 25px; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
+        
+        .btn-main {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        .btn-main:hover { background-color: #1eb854; transform: translateY(-2px); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 35px; color: #d4a373; }
+
+        .features {
+            background-color: #faedcd;
+            padding: 35px 20px;
+            border-radius: 15px;
+            margin-bottom: 45px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .feature-item h3 { color: #bc8a5f; margin-bottom: 6px; }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        .menu-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .menu-img { width: 100%; height: 210px; object-fit: cover; }
+        .menu-info { padding: 20px; text-align: center; }
+        .menu-title { font-size: 1.25rem; margin-bottom: 8px; }
+        .menu-desc { font-size: 0.88rem; color: #666; margin-bottom: 15px; }
+        .menu-price { font-size: 1.2rem; font-weight: 700; color: #e63946; margin-bottom: 15px; }
+        
+        .btn-order {
+            display: block;
+            padding: 10px 0;
+            background-color: #d4a373;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn-order:hover { background-color: #bc8a5f; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 35px 20px; margin-top: 50px; }
+        footer a { color: #ffb703; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jemblem Lumer Istimewa</h1>
+        <p>Jajanan Tradisional Singkong Renyah dengan Isian Lumer Berbagai Rasa!</p>
+        <a href="https://wa.me/6281515072699?text=Halo,%20saya%20ingin%20pesan%20Jemblem" class="btn-main" target="_blank">Pesan via WhatsApp</a>
+    </header>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature-item">
+                <h3>Fresh & Warm</h3>
+                <p>Digoreng mendadak saat dipesan, selalu hangat.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Bahan Pilihan</h3>
+                <p>Singkong berkualitas premium, empuk & renyah.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Isian Melimpah</h3>
+                <p>Lumer manisnya pas di setiap gigitan.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Pilihan Rasa & Harga</h2>
+        
+        <div class="menu-grid">
+            <!-- Varian 1 -->
+            <div class="menu-card">
+                <img src="input_file_0.png" alt="Jemblem Gula Merah" class="menu-img">
+                <div class="menu-info">
+                    <h3 class="menu-title">Original Gula Merah</h3>
+                    <p class="menu-desc">Isian gula merah meleleh sempurna saat digigit.</p>
+                    <div class="menu-price">Rp 12.000 <small style="font-size:0.75rem; color:#777;">/ isi 5 pcs</small></div>
+                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20mau%20pesan%20Jemblem%20Gula%20Merah" class="btn-order" target="_blank">Pesan Rasa Ini</a>
+                </div>
+            </div>
+
+            <!-- Varian 2 -->
+            <div class="menu-card">
+                <img src="input_file_0.png" alt="Jemblem Cokelat" class="menu-img">
+                <div class="menu-info">
+                    <h3 class="menu-title">Cokelat Lumer</h3>
+                    <p class="menu-desc">Isian cokelat manis premium yang melted di mulut.</p>
+                    <div class="menu-price">Rp 15.000 <small style="font-size:0.75rem; color:#777;">/ isi 5 pcs</small></div>
+                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20mau%20pesan%20Jemblem%20Cokelat" class="btn-order" target="_blank">Pesan Rasa Ini</a>
+                </div>
+            </div>
+
+            <!-- Varian 3 -->
+            <div class="menu-card">
+                <img src="input_file_0.png" alt="Jemblem Keju" class="menu-img">
+                <div class="menu-info">
+                    <h3 class="menu-title">Keju Melt</h3>
+                    <p class="menu-desc">Perpaduan gurihnya keju yang mulur dipadu tekstur renyah.</p>
+                    <div class="menu-price">Rp 15.000 <small style="font-size:0.75rem; color:#777;">/ isi 5 pcs</small></div>
+                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20mau%20pesan%20Jemblem%20Keju" class="btn-order" target="_blank">Pesan Rasa Ini</a>
+                </div>
+            </div>
+
+            <!-- Varian 4 -->
+            <div class="menu-card">
+                <img src="input_file_0.png" alt="Jemblem Matcha" class="menu-img">
+                <div class="menu-info">
+                    <h3 class="menu-title">Matcha / Green Tea</h3>
+                    <p class="menu-desc">Sensasi isian cream matcha manis dan khas.</p>
+                    <div class="menu-price">Rp 15.000 <small style="font-size:0.75rem; color:#777;">/ isi 5 pcs</small></div>
+                    <a href="https://wa.me/6281515072699?text=Halo,%20saya%20mau%20pesan%20Jemblem%20Matcha" class="btn-order" target="_blank">Pesan Rasa Ini</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Hubungi Pemesanan:</p>
+        <p><strong>WhatsApp:</strong> <br> <a href="https://wa.me/6281515072699" target="_blank">0815-1507-2699</a></p>
+    </footer>
+
+</body>
+</html>
 
